@@ -17,5 +17,5 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	fmt.Println(colors[0][0])
+	fmt.Println(colors[0][0], colors[100][100])
 }
