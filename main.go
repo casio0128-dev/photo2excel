@@ -17,5 +17,18 @@ func main() {
 		log.Fatalln(err)
 	}
 
+	book, err := openExcelBook("sample.xlsx")
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	for x, colorRow := range colors {
+		for y, color := range colorRow {
+			fillCellColor(book, color, x+1, y+1)
+		}
+	}
+
+	book.SaveAs("sample.xlsx")
+
 	fmt.Println(colors[0][0])
 }
