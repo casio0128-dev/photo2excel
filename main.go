@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	_ "image/jpeg"
 	"log"
 )
@@ -12,10 +11,18 @@ import (
 */
 
 func main() {
-	colors, err := createPhotoRGBMap("./sample.jpg")
+	//colors, err := createPhotoRGBMap("./sample.jpg")
+	//if err != nil {
+	//	log.Fatalln(err)
+	//}
+
+	img, err := openPicture("./sample.jpg")
+
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	fmt.Println(colors[0][0])
+	mask(img)
+
+	//outputExample()
 }
